@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Tra cứu điểm / Kết quả học tập EduTECH";
+}
+
+<style>
+    body {
+        font-family: 'Inter', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+    }
+
+    /* Top Bar */
+    .top-bar {
+        background-color: rgb(0, 63, 136);
+        color: white;
+        font-size: 0.9rem;
+    }
+</style>
+
+<div class="min-vh-100 bg-light py-5">
+    <div class="container">
+        <!-- Card 1: Form Tra cứu -->
+        <div class="card shadow-lg mb-5">
+            <div class="card-header bg-primary text-white text-center py-4">
+                <h2 class="card-title mb-0">TRA CỨU ĐIỂM / KẾT QUẢ HỌC TẬP EDUTECH</h2>
+            </div>
+            <div class="card-body p-4">
+                <form class="row g-4">
+                    <!-- Họ và tên -->
+                    <div class="col-md-4">
+                        <label for="name" class="form-label fw-semibold">Họ và tên</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nguyễn Văn A">
+                    </div>
+                    <!-- Email -->
+                    <div class="col-md-4">
+                        <label for="email" class="form-label fw-semibold">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="example@email.com">
+                    </div>
+                    <!-- Ngày thi -->
+                    <div class="col-md-4">
+                        <label for="exam-date" class="form-label fw-semibold">Ngày thi</label>
+                        <select class="form-select" id="exam-date">
+                            <option value="" selected>-- Chọn ngày thi --</option>
+                            <option value="2024-03-15">15/03/2024</option>
+                            <option value="2024-03-16">16/03/2024</option>
+                            <option value="2024-03-17">17/03/2024</option>
+                        </select>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="col-12 text-center mt-3">
+                        <button type="submit" class="btn btn-primary px-5 me-3">Tra cứu</button>
+                        <button type="reset" class="btn btn-secondary px-5">Nhập lại</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Card 2: Kết quả học tập -->
+        <div class="card shadow-lg">
+            <div class="card-header border-bottom py-4">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h4 class="card-title mb-0">Kết quả học tập: Nguyễn Văn A - Lớp: WEB01</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row g-2">
+                            <div class="col">
+                                <select class="form-select">
+                                    <option value="2024-2025" selected>2024-2025</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <select class="form-select">
+                                    <option value="hk1" selected>Học kỳ 1</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-4">
+                <!-- Table: Bảng điểm -->
+                <div class="card">
+                    <div class="card-header bg-light border-bottom">
+                        <h5 class="mb-0 text-primary d-flex align-items-center">
+                            <i class="bi bi-file-earmark-text-fill me-2"></i> BẢNG ĐIỂM
+                        </h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-bordered mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col" class="fw-semibold">Môn học</th>
+                                    <th scope="col" class="fw-semibold">Giữa kỳ</th>
+                                    <th scope="col" class="fw-semibold">Cuối kỳ</th>
+                                    <th scope="col" class="fw-semibold">TBM</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-medium">Thiết kế Web</td>
+                                    <td>4</td>
+                                    <td>5.3</td>
+                                    <td class="fw-semibold">4.9</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

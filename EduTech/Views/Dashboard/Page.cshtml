@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">EduTech</a>
+
+        
+
+        <div class="nav-section">
+            <div class="nav-section-title">Contents Management</div>
+            <nav class="nav flex-column">
+                <a class="nav-link" href="#"><i class="bi bi-grid"></i> Dashboard</a>
+                <a class="nav-link" href="@Url.Action("Main", "Course")"><i class="bi bi-book"></i> Khoá học</a>
+                <a class="nav-link" href="@Url.Action("Add", "Class")"><i class="bi bi-mortarboard"></i> Lớp học</a>
+            </nav>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">User Management</div>
+            <nav class="nav flex-column">
+            <a class="nav-link" href="@Url.Action("Index", "Student")"><i class="bi bi-people"></i> Học viên</a>
+                <a class="nav-link" href="#"><i class="bi bi-person-video3"></i> Giảng viên</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- User Menu -->
+        <div class="user-menu">
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown">
+                    ET
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><h6 class="dropdown-header">My Dashboard</h6></li>
+                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="#">My Account</a></li>
+                    <li><a class="dropdown-item" href="#">Change password</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="container-fluid">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="stats-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="stats-title">Lớp học</div>
+                                <div class="stats-number">200</div>
+                            </div>
+                            <i class="bi bi-building stats-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="stats-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="stats-title">Khoá học</div>
+                                <div class="stats-number">7</div>
+                            </div>
+                            <i class="bi bi-journal-text stats-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="stats-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="stats-title">Giảng viên</div>
+                                <div class="stats-number">5</div>
+                            </div>
+                            <i class="bi bi-person-video3 stats-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="stats-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="stats-title">Học viên</div>
+                                <div class="stats-number">10</div>
+                            </div>
+                            <i class="bi bi-people stats-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

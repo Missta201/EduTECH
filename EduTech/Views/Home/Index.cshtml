@@ -1,0 +1,467 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+    <style>
+        body {
+            font-family: 'Inter', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+        }
+
+        .course-card {
+            border: 1px solid #ddd;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+            background: white;
+            height: 100%;
+        }
+
+            .course-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .hexagon-top {
+            height: 30px;
+            background: #f8f9fa;
+            position: relative;
+            margin-bottom: -1px;
+        }
+
+            .hexagon-top:before,
+            .hexagon-top:after {
+                content: "";
+                position: absolute;
+                width: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+            }
+
+            .hexagon-top:before {
+                bottom: 0;
+                border-bottom: 15px solid #f8f9fa;
+            }
+
+            .hexagon-top:after {
+                top: 0;
+                border-top: 15px solid white;
+            }
+
+        .action-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            margin: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s;
+        }
+
+            .action-card:hover {
+                transform: scale(1.05);
+                text-decoration: none;
+                color: #333;
+            }
+
+        .footer-section {
+            background-color: #4285f4;
+            padding: 20px 0;
+        }
+
+        h1 {
+            color: rgb(0, 63, 136);
+        }
+
+        .training-section {
+            background-color: #6c757d;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .training-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+            .training-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .training-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #4285f4;
+        }
+
+        .training-title {
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .training-section {
+            background-color: #6c757d;
+            padding: 40px 0;
+        }
+
+        .training-title {
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+            .course-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .course-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4285f4;
+        }
+
+        .course-title {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .quick-access {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+        }
+
+        .quick-access-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .utility-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+            .utility-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                color: inherit;
+            }
+
+        .utility-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: #4285f4;
+        }
+
+        .utility-content h3 {
+            font-size: 1rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .utility-content p {
+            font-size: 0.875rem;
+            margin: 5px 0 0;
+            color: #666;
+        }
+
+        .main-footer {
+            background-color: #00A3E0;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .brand-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .est-year {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+            .contact-info p {
+                margin-bottom: 8px;
+            }
+
+        .map-container {
+            height: 300px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+
+    <!-- Main Header -->
+    <div class="container text-center py-4">
+        <h1 class="display-5 fw-bold">TRUNG TÂM CÔNG NGHỆ THÔNG TIN</h1>
+        <div class="bg-light d-inline-block px-4 py-2 rounded-3 mt-2">
+            <h5 class="m-0">Cung cấp các khóa học ngắn hạn</h5>
+        </div>
+    </div>
+
+    <!-- Course Cards -->
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="course-card">
+                    <div class="hexagon-top"></div>
+                    <div class="p-3 text-center">
+                        <i class="bi bi-laptop fs-1 mb-2"></i>
+                        <h6>Triển khai ứng dụng Công nghệ thông tin</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="course-card">
+                    <div class="hexagon-top"></div>
+                    <div class="p-3 text-center">
+                        <i class="bi bi-shield-lock fs-1 mb-2"></i>
+                        <h6>An ninh mạng và hạ tầng mạng</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="course-card">
+                    <div class="hexagon-top"></div>
+                    <div class="p-3 text-center">
+                        <i class="bi bi-database fs-1 mb-2"></i>
+                        <h6>Big Data</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="course-card">
+                    <div class="hexagon-top"></div>
+                    <div class="p-3 text-center">
+                        <i class="bi bi-graph-up fs-1 mb-2"></i>
+                        <h6>Business Intelligence</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="course-card">
+                    <div class="hexagon-top"></div>
+                    <div class="p-3 text-center">
+                        <i class="bi bi-window fs-1 mb-2"></i>
+                        <h6>Thiết kế Website</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="course-card">
+                    <div class="hexagon-top"></div>
+                    <div class="p-3 text-center">
+                        <i class="bi bi-award fs-1 mb-2"></i>
+                        <h6>Chứng chỉ ứng dụng CNTT cơ bản</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Training Courses Section -->
+   
+    <!-- Footer Actions -->
+    <div class="footer-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-3 mb-3 mb-md-0">
+                    
+                    <a class="action-card d-block" asp-area="Identity"
+                       asp-page="/Account/Register">
+                        <i class="bi bi-pencil-square fs-1 mb-2"></i>
+                        <div>Ghi danh ngay</div>
+                    </a>
+                    @* <a href="@Url.Action("Login", "Auth")" class="action-card d-block"> *@
+                    @*     <i class="bi bi-pencil-square fs-1 mb-2"></i> *@
+                    @*     <div>Ghi danh ngay</div> *@
+                    @* </a> *@
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <a href="#" class="action-card d-block">
+                        <i class="bi bi-journal-text fs-1 mb-2"></i>
+                        <div>Danh sách các khóa học</div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <a href="#" class="action-card d-block">
+                        <i class="bi bi-people fs-1 mb-2"></i>
+                        <div>Danh sách các lớp học</div>
+                    </a>
+                </div>
+                <div class="col-md-3 text-white d-flex align-items-center">
+                    <h5 class="m-0">Thông báo chiêu sinh các lớp khóa 2024</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Training Courses Section -->
+    <section class="training-section">
+        <div class="container">
+            <h2 class="training-title">KHÓA HỌC ĐÀO TẠO</h2>
+            <div class="row g-4">
+                <!-- Row 1 -->
+                <div class="col-md-4 col-lg-2.4">
+                    <div class="course-card">
+                        <i class="bi bi-microsoft course-icon"></i>
+                        <h3 class="course-title">Chứng chỉ MOS</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2.4">
+                    <div class="course-card">
+                        <i class="bi bi-brush course-icon"></i>
+                        <h3 class="course-title">Photoshop</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2.4">
+                    <div class="course-card">
+                        <i class="bi bi-cloud course-icon"></i>
+                        <h3 class="course-title">Điện toán đám mây</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2.4">
+                    <div class="course-card">
+                        <i class="bi bi-database course-icon"></i>
+                        <h3 class="course-title">Cơ sở dữ liệu</h3>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-md-4 col-lg-2.4">
+                    <div class="course-card">
+                        <i class="bi bi-terminal course-icon"></i>
+                        <h3 class="course-title">Linux cơ bản</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2.4">
+                    <div class="course-card">
+                        <i class="bi bi-windows course-icon"></i>
+                        <h3 class="course-title">Ứng dụng CNTT</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2.4">
+                    <div class="course-card">
+                        <i class="bi bi-shield-check course-icon"></i>
+                        <h3 class="course-title">Tường lửa & IDS/IPS</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2.4">
+                    <div class="course-card">
+                        <i class="bi bi-tools course-icon"></i>
+                        <h3 class="course-title">IT Helpdesk</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2.4">
+                    <div class="course-card">
+                        <i class="bi bi-layout-text-window-reverse course-icon"></i>
+                        <h3 class="course-title">UI/UX</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access">
+        <div class="container">
+            <h2 class="quick-access-title">Truy cập tiện ích</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#" class="utility-card">
+                        <i class="bi bi-megaphone utility-icon"></i>
+                        <div class="utility-content">
+                            <h3>Thông báo mở lớp</h3>
+                            <p>Thông báo thời gian các đợt mở lớp</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="utility-card">
+                        <i class="bi bi-calendar-event utility-icon"></i>
+                        <div class="utility-content">
+                            <h3>Thông báo lịch học</h3>
+                            <p>Thông báo thời gian các đợt mở lớp</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="@Url.Action("ExamResults", "Exam")" class="utility-card">
+                 
+                        <i class="bi bi-search utility-icon"></i>
+                        <div class="utility-content">
+                            <h3>Tra cứu điểm thi</h3>
+                            <p>Tra cứu điểm thi theo từng đợt</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="utility-card">
+                        <i class="bi bi-clipboard-check utility-icon"></i>
+                        <div class="utility-content">
+                            <h3>Thông báo tổ chức thi</h3>
+                            <p>Thông báo kì thi sắp tổ chức</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="utility-card">
+                        <i class="bi bi-card-checklist utility-icon"></i>
+                        <div class="utility-content">
+                            <h3>Thông báo có kết quả thi</h3>
+                            <p>Thông báo kết quả thi của từng đợt</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="utility-card">
+                        <i class="bi bi-award utility-icon"></i>
+                        <div class="utility-content">
+                            <h3>Thông báo nhận chứng chỉ</h3>
+                            <p>Thông báo nhận chứng chỉ theo từng đợt</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Sửa khóa học";
+}
+
+@model EduTech.Models.AddCourseViewModel
+
+
+    <style>
+        body {
+            font-family: 'Inter', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+        }
+    </style>
+    <div class="main-container">
+        <!-- Navigation back button -->
+        <a href="@Url.Action("Main", "Course")" class="btn btn-outline-primary mb-3">
+            <i class="bi bi-arrow-left"></i> Quay lại
+        </a>
+
+        <h3 class="mb-3 fw-normal">Sửa khóa học</h3>
+
+        @* Check if the model is null *@
+        @if (Model == null)
+        {
+            <p class="text-danger">Không tìm thấy khóa học.</p>
+        }
+        else
+        {
+            <!-- Course Edit Form -->
+            @* <form method="post" asp-action="Edit" asp-controller="Course">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="floatingInput" asp-for="Name" />
+                    <label for="floatingInput">Tên khóa học</label>
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="floatingDescription" style="height: 120px;" asp-for="Description"></textarea>
+                    <label for="floatingDescription">Mô tả</label>
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form> *@
+            <form method="post" asp-action="Edit" asp-controller="Course">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="floatingInput" asp-for="Name" />
+                    <label for="floatingInput">Tên khóa học</label>
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="floatingDescription" style="height: 120px;" asp-for="Description"></textarea>
+                    <label for="floatingDescription">Mô tả</label>
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <button class="btn btn-primary" type="submit">Save</button>
+                
+            </form>
+        }
+    </div>

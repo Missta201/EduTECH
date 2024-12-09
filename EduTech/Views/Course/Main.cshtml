@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Khoá học";
+    int i = 0;
+}
+@model List<EduTech.Models.Course>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Course Board Content -->
+        <div class="container-fluid">
+            <a href="@Url.Action("Page", "Dashboard")" class="text-secondary text-decoration-none">
+                <i class="bi bi-arrow-left-circle"></i> Back to Dashborad
+            </a>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Danh sách khóa học</h2>
+                <a href="@Url.Action("Add", "Course")" class="btn btn-primary">
+                    <i class="bi bi-plus-circle me-2"></i>Add Course
+                </a>
+            </div>
+
+            <!-- Course List -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên khóa học</th>
+                        <th>Mô tả</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var course in Model)
+                    {
+                        <tr>
+                            <td>@(++i)</td>
+                            <td>@course.Name</td>
+                            <td>@course.Description</td>
+                            <td>
+                                @* <a class="btn btn-outline-primary" href="@Url.Action("Add", "Course")" "@course.Name">Edit</a> *@
+                                <a class="btn btn-outline-primary" href="@Url.Action("Edit", "Course", new { id = course.Id })">Edit</a>
+                                @* <button class="btn btn-danger" type="submit" asp-action="Delete" asp-controller="Course">Delete</button> *@
+                                <form method="post" action="@Url.Action("Delete", "Course")" style="display:inline;">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="Id" value="@course.Id" />
+                                    <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    
